@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <center>
+<head>
+    <title>Nothing Important</title>
+    <style>
+        /* Style to hide the content initially */
+        .hidden {
+            display: none;
+        }
+
+        /* Style for red screen effect */
+        .red-screen {
+            background-color: red;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello daddy mumma dude or dadi, welcome to this beautiful website</h1>
+    <h2>Please find below some text, and a button. When you are finished reading the text, click the button to continue reading.</h2>
+
+    <div id="a" class="hidden">
+        Right, so I is very fortunate and very happy with all his gadgets and loves his headphones but......
+    </div>
+    <div id="b" class="hidden">
+        It would be great if I could get some Nothing ear 2's, and here are my reasons why I need Nothing ear 2's from the best dude in the world!!! Who didn't take me to Scotland, but whatever, it doesn't matter. Daddy is taking me anyway......  
+    </div>
+    <div id="c" class="hidden">
+        Anyway, here are the reasons why I need Nothing ear 2's:
+        <ol>
+            <li>My old Philips headphones are old now and don't work nicely.</li>
+            <li>The Nothings will help me study because I am focused when I hear music.</li>
+        </ol>
+    </div>
+    <div id="d" class="hidden">
+        <ol start="3">
+            <li>I want to get into mixing sound, and for that, Philips headphones don't support the codecs needed. I have downloaded a free version of Logic Pro on Mac and will use that for editing sound and frequencies.</li>
+            <li>I want to enjoy high-quality lossless music, which my Philips headphones don't support.</li>
+        </ol>
+    </div>
+    <div id="e" class="hidden">
+        <p>5. With good headphones, I will exercise more and hang from the railing on our roof to increase my height.</p>
+    </div>
+    <div id="f" class="hidden">
+        <p>Your mission, should you choose to accept it Mr. Jain, is to buy me Nothing ear 2's.</p>
+        <p>This message will self-destruct in 5 seconds. Ciao!</p>
+    </div>
+
+    <button id="nextButton" onclick="showNext()">Next</button>
+
+    <script>
+        var currentIndex = 0;
+        var elements = document.querySelectorAll('.hidden');
+
+        function showNext() {
+            if (currentIndex > 0) {
+                elements[currentIndex - 1].style.display = 'none'; // Hide the previous element
+            }
+
+            if (currentIndex === elements.length - 1) {
+                // Last element reached, initiate self-destruct
+                setTimeout(selfDestruct, 2000);
+            } else {
+                elements[currentIndex].style.display = 'block'; // Show the current element
+                currentIndex++;
+            }
+
+            if (currentIndex >= elements.length) {
+                // All elements are shown, hide the button
+                document.getElementById('nextButton').style.display = 'none';
+            }
+        }
+
+        function selfDestruct() {
+            document.body.innerHTML = '<div class="red-screen">This message has self-destructed.</div>';
+        }
+    </script>
+</body>
+</center>
+</html>
